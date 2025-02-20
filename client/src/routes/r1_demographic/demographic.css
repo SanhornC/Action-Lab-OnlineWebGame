@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2.5% 5%;
+}
+
+.subHeading {
+  font-size: 1.25rem;
+}
+
+.options {
+  margin-bottom: 0.675rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.options-container {
+  display: inline;
+  margin: 0.675rem;
+}
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+
+  li {
+    display: flex;
+    flex-direction: column;
+  }
+}
+li {
+  list-style-type: none; /* Removes bullet points from list */
+}
+
+/* Additional CSS for form styling */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+
+.enter-room-button {
+  margin-top: 20px;
+  padding: 24px 12px;
+  font-size: 28px;
+  background: #31a24c;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.highlighted-radio input[type="radio"]:checked + .form-check-label {
+  /* Replace the background color and other properties with your desired highlight style */
+  background-color: blue; /* Example highlight color */
+  border: 1px solid white; /* Example border color */
+  /* Add other styling properties as needed */
+}

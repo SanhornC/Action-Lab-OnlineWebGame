@@ -1,0 +1,33 @@
+.card_modal_body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--theme-light-pink);
+  margin: 5%;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.card_modal_button_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+}
+
+.card_modal_button {
+  padding: 0.5rem 2rem !important;
+  font-size: 1.0625rem !important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card_modal_button_close {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  color: white !important;
+}
+
+.card_modal_button_play {
+  background-color: #327957 !important;
+  border-color: var(--theme-dark-green) !important;
+  color: white !important;
+}

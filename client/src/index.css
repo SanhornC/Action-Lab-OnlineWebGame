@@ -1,0 +1,36 @@
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+:root {
+  --theme-pink: #ff6a85;
+  --theme-light-pink: #ffe9ec;
+  --theme-yellow: #f2ce1b;
+  --theme-peach: #f9cdad;
+  --theme-medium-green: #83af9b;
+  --theme-light-green: #c2ded1;
+  --theme-dark-green: #327957;
+  --theme-teal: #41bfb3;
+  --theme-orange: #f27457;
+  --theme-white: #fffff0;
+}
+
+.primary_button {
+  background-color: var(--theme-dark-green);
+  border-color: var(--theme-dark-green);
+  border-radius: 0;
+}
+
+.self_test_ping_pong {
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+}

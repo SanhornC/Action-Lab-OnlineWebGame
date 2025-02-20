@@ -1,0 +1,70 @@
+services:
+  proxy:
+    image: traefik:v2.11
+    command: --providers.docker
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  server:
+    build:
+      context: ./
+      target: server-dev
+    environment:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_USER: root
+      MYSQL_PASSWORD: csh00515
+      MYSQL_DB: actionlabstudy_consensus
+    develop:
+      watch:
+        - path: ./server/src
+          action: sync+restart
+          target: /usr/local/app/src
+        - path: ./server/package.json
+          action: rebuild
+    labels:
+      traefik.http.routers.server.rule: Host(`server.actionlab_nightly.localhost`)
+      traefik.http.services.server.loadbalancer.server.port: 4000
+
+  client:
+    build:
+      context: ./
+      target: client-dev
+    develop:
+      watch:
+        - path: ./client/src
+          action: sync
+          target: /usr/local/app/src
+        - path: ./client/index.html
+          action: sync
+          target: /usr/local/app/index.html
+        - path: ./client/.env.development
+          action: sync+restart
+          target: /usr/local/app/.env.development
+        - path: ./client/package.json
+          action: rebuild
+    labels:
+      traefik.http.routers.client.rule: Host(`actionlab_nightly.localhost`)
+      traefik.http.services.client.loadbalancer.server.port: 5173
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - uiuc-action-lab-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: actionlabstudy_consensus
+
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: password
+    labels:
+      traefik.http.routers.phpmyadmin.rule: Host(`db.actionlab_nightly.localhost`)
+      traefik.http.services.phpmyadmin.loadbalancer.server.port: 80
+
+volumes:
+  uiuc-action-lab-mysql-data:

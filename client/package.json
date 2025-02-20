@@ -1,0 +1,51 @@
+{
+  "name": "online-board-game",
+  "version": "0.0.20241023",
+  "homepage": ".",
+  "private": true,
+  "proxy": "https://boardgame.web.illinois.edu:4000",
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+
+    "bootstrap": "^5.1.3",
+    "joi": "^17.12.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-bootstrap": "^2.2.3",
+    "react-bootstrap-range-slider": "3.0.4",
+    "react-countdown": "^2.3.2",
+    "react-hook-form": "^7.51.2",
+    "react-hot-loader": "^4.13.1",
+    "react-router-dom": "^5.2.0",
+    "socket.io-client": "3.0.4",
+    "store2": "^2.14.3"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.24",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite": "^4.1.0"
+  },
+  "scripts": {
+    "start": "PORT=5173 vite --host", 
+    "build": "vite build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
